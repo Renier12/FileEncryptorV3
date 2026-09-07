@@ -240,6 +240,7 @@
             // 
             // FormFileEncryptor
             // 
+            this.AcceptButton = this.buttonOpenFile;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(396, 295);
@@ -250,8 +251,11 @@
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(412, 334);
+            this.MinimumSize = new System.Drawing.Size(412, 334);
             this.Name = "FormFileEncryptor";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "File Encryptor";
             this.Load += new System.EventHandler(this.FormFileEncryptor_Load);
             this.menuStrip1.ResumeLayout(false);
