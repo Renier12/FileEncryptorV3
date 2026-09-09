@@ -204,7 +204,7 @@ namespace FileEncryptorV3
                     string fileName = comboBoxFileName.Text;
                     comboBoxFileName.Text = fileName + ".fe3";
 
-                    MessageBox.Show("File encrypted and saved successfully!");
+                    //MessageBox.Show("File encrypted and saved successfully!");
                 }
                 else
                 {
@@ -220,12 +220,19 @@ namespace FileEncryptorV3
             if (File.Exists("Storage//" + comboBoxFileName.Text) && textBoxEncryptionKey.Text != string.Empty)
             {
                 DisableUI();
-                DecryptFile("Storage//" + comboBoxFileName.Text, textBoxEncryptionKey.Text);
-                string fileName = comboBoxFileName.Text;
-                comboBoxFileName.Text = fileName.Substring(0, fileName.Length - 4);
+                try
+                {
+                    DecryptFile("Storage//" + comboBoxFileName.Text, textBoxEncryptionKey.Text);
+                    string fileName = comboBoxFileName.Text;
+                    comboBoxFileName.Text = fileName.Substring(0, fileName.Length - 4);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+
+                }
                 
-                
-                MessageBox.Show("File decrypted and saved successfully!");
+                //MessageBox.Show("File decrypted and saved successfully!");
             }
             else
             {
